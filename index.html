@@ -5,20 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-    <style>
-        #outgoing {
-          width: 600px;
-          word-wrap: break-word;
-        }
-      </style>
 </head>
 <body>
-    <form>
-      <textarea id="incoming"></textarea>
-      <button type="submit">submit</button>
-    </form>
-    <pre id="outgoing"></pre>
-    <script src="script.js"></script>
+ 
+    <textarea class="my-id" id="my-id" placeholder="my id" readonly></textarea>
+    <br>
+    <button class="copy" data-clipboard-target="#my-id" >copy</button>
+    <br><br>
+    <textarea class="other-id" placeholder="Paste the other's key"></textarea>
+    <br><br><br>
+    <button class="connect">connect</button>
+
+  <script src="script.js"></script>
+  <script src="node_modules/clipboard/dist/clipboard.min.js"></script>
 </body>
 </html>
