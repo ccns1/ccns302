@@ -4,7 +4,7 @@
   "description": "A simple webrtc video, audio and messages chat application.",
   "main": "index.js",
   "dependencies": {
-    "simple-peer": "^8.1.0"
+    "simple-peer": "^9.1.0"
   },
   "devDependencies": {},
   "scripts": {
