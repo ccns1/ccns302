@@ -4,11 +4,14 @@
   "description": "A simple webrtc video, audio and messages chat application.",
   "main": "index.js",
   "dependencies": {
+    "clipboard": "^2.0.4",
     "simple-peer": "^9.1.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watching": "browserify index.js -o script.js",
+    "watch": "npm-watch"
   },
   "repository": {
     "type": "git",
@@ -24,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/AM-77/webrtc-video-chat/issues"
   },
-  "homepage": "https://github.com/AM-77/webrtc-video-chat#readme"
+  "homepage": "https://github.com/AM-77/webrtc-video-chat#readme",
+  "watch": {
+    "watching": "index.js"
+  }
 }
