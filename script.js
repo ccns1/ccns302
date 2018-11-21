@@ -59,6 +59,22 @@ p.on('data', (data) => {
   message = JSON.parse(data)
   messages.innerHTML += `<div class="msg o">${message.username}: ${message.msg}</div>`
 })
+
+// When the connectio is closed
+p.on('close', () => {
+  alert("Connection closed.")
+})
+
+// When an exception raise
+p.on('error', (err) => {
+  alert("There was an error. : " + err)
+})
+
+// If the user wants to close the connection.
+
+document.querySelector("button.close").addEventListener("click", ()=>{
+  p.destroy("Bae!")
+})
 },{"clipboard":2,"simple-peer":22}],2:[function(require,module,exports){
 /*!
  * clipboard.js v2.0.4
