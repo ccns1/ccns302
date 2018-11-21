@@ -5,16 +5,99 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+    
+        .connection{
+            display: block;
+            position: relative;
+            width: 20%;
+            float: left;
+            margin-right: 2%;
+            background-color: aquamarine;
+        }
+
+        .messaging{
+            display: block;
+            position: relative;
+            width: 78%;
+            height: 100vh;
+            float: left;
+            background-color: cornsilk;
+        }
+
+        .messaging .messages{
+            display: block;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .messaging .sending{
+            display: block;
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+        }
+
+        .msg{
+            display: block;
+            height: 35px;
+            background-color: #dfdfdf;
+            border-radius: 3px;
+            color: #333333;
+            font-family: roboto;
+            font-size: 14px;
+            maring-top: 5px;
+            margin-bottom: 5px;
+            line-height: 2.5;
+            text-indent: 15px;
+        }
+
+        .m{
+            background-color: antiquewhite;
+        }
+
+    </style>
+
 </head>
 <body>
  
-    <textarea class="my-id" id="my-id" placeholder="my id" readonly></textarea>
-    <br>
-    <button class="copy" data-clipboard-target="#my-id" >copy</button>
-    <br><br>
-    <textarea class="other-id" placeholder="Paste the other's key"></textarea>
-    <br><br><br>
-    <button class="connect">connect</button>
+    <div class="connection">
+        <textarea class="my-id" id="my-id" placeholder="my id" readonly></textarea>
+        <br>
+        <button class="copy" data-clipboard-target="#my-id" >copy</button>
+        <br><br>
+        <textarea class="other-id" placeholder="Paste the other's key"></textarea>
+        <br><br><br>
+        <button class="connect">connect</button>
+    </div>
+    <div class="messaging">
+        <div class="messages">
+                <div class="msg m">
+                    Hello
+                </div>
+                <div class="msg o">
+                    Hello there
+                </div>
+        </div>
+        <br>
+        <div class="sending">
+            <textarea name="msg" class="msg" id="msg" cols="130" rows="3"></textarea>
+            <br>
+            <button class="send">send</button>
+        </div>
+    </div>
+    
 
   <script src="script.js"></script>
   <script src="node_modules/clipboard/dist/clipboard.min.js"></script>
