@@ -1,13 +1,7 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-
-navigator.getUserMedia({ audio: false, video: true }, (stream)=>{
-
-
-
-
 let Peer = require('simple-peer')
 let Clipboard = require('clipboard')
-let p = new Peer({ initiator: location.hash === '#1', trickle: false, stream:stream })
+let p = new Peer({ initiator: location.hash === '#1', trickle: false })
 
 let voice_is_on = false
 let video_is_on = false
@@ -108,22 +102,22 @@ voice_call.addEventListener("click", ()=>{
   }else{
     voice_is_on = false
   }
-  
+
 })
 
 
-  
-  p.on('stream', function (stream) {
-    var audio = document.querySelector('video')
-    audio.src = window.URL.createObjectURL(stream)
-    audio.play()
-    console.log(".")
+// get chat type
+function get_type(){
+  radios = document.querySelectorAll("input.type")
+  radios.forEach(r => {
+    if (r.checked)
+      return r.nextElementSibling.getAttribute("value")
   })
+}
 
-}, (err) => {
-  console.log("There was an erro : " + err)
-})
 
+
+console.log(get_type())
 },{"clipboard":2,"simple-peer":22}],2:[function(require,module,exports){
 /*!
  * clipboard.js v2.0.4
