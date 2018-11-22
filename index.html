@@ -73,16 +73,15 @@
 <body>
 
     <div>
-        <select name="" id="">
-                <option value="messages">messages</option>
-                <option value="audio">audio</option>
-                <option value="video">video</option>
-        </select>
+            <input class="type" type="radio" name="chat" id="audio" checked>
+            <label for="audio" value="audio">audio</label>
+            <input class="type" type="radio" name="chat" id="video">
+            <label for="video" value="video">video</label>
+            <input class="type" type="radio" name="chat" id="messages">
+            <label for="messages" value="messages">messages</label>
     </div>
 
     <div class="connection">
-
-        <video></video>
         <div class="confirm">
             <p class="confirm_message"></p>
         </div>
