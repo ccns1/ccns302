@@ -1,12 +1,6 @@
-
-navigator.getUserMedia({ audio: false, video: true }, (stream)=>{
-
-
-
-
 let Peer = require('simple-peer')
 let Clipboard = require('clipboard')
-let p = new Peer({ initiator: location.hash === '#1', trickle: false, stream:stream })
+let p = new Peer({ initiator: location.hash === '#1', trickle: false })
 
 let voice_is_on = false
 let video_is_on = false
@@ -107,18 +101,19 @@ voice_call.addEventListener("click", ()=>{
   }else{
     voice_is_on = false
   }
-  
+
 })
 
 
-  
-  p.on('stream', function (stream) {
-    var audio = document.querySelector('video')
-    audio.src = window.URL.createObjectURL(stream)
-    audio.play()
-    console.log(".")
+// get chat type
+function get_type(){
+  radios = document.querySelectorAll("input.type")
+  radios.forEach(r => {
+    if (r.checked)
+      return r.nextElementSibling.getAttribute("value")
   })
+}
 
-}, (err) => {
-  console.log("There was an erro : " + err)
-})
+
+
+console.log(get_type())
