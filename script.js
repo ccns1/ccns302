@@ -3,20 +3,27 @@ let Peer = require('simple-peer')
 let Clipboard = require('clipboard')
 let p = new Peer({ initiator: location.hash === '#1', trickle: false })
 
+let confirm_message = document.querySelector(".confirm_message")
+let sender = document.querySelector(".sender")
+let reciever = document.querySelector('.reciever')
+
 p.on('error', (err) => { console.log('[!] There was an error: ', err) })
 
 p.on('signal', (data) => {
-  document.querySelector('.my-id').value = JSON.stringify(data)
+  sender.value = JSON.stringify(data)
 })
 
 document.querySelector('.connect').addEventListener('click', (e)  => {
   e.preventDefault()
   the_msg.username = username.value.trim() 
-  p.signal(JSON.parse(document.querySelector('.other-id').value))
+  p.signal(JSON.parse(reciever.value))
 })
 
 p.on('connect',  () => {
-  console.log('CONNECTED ....')
+
+  // add some popup message to tell the users that they are connnected
+  confirm_message.innerText = "You are connected"
+  console.log('connected ....')
 })
 
 
@@ -24,10 +31,12 @@ p.on('connect',  () => {
 let clipboard = new Clipboard('.copy');
 
 clipboard.on('success', (e) => {
+
   console.info('Text:', e.text);
   document.querySelector(".copy").innerHTML = "copied"
-  document.querySelector(".my-id").disabled = true
+  sender.disabled = true
   e.clearSelection();
+
 });
 
 clipboard.on('error', (e) => {
@@ -62,11 +71,13 @@ p.on('data', (data) => {
 
 // When the connectio is closed
 p.on('close', () => {
+  confirm_message.innerText = "The reciever left. Connection closed."
   alert("Connection closed.")
 })
 
 // When an exception raise
 p.on('error', (err) => {
+  confirm_message.innerText = "Error,.Connection closed."
   alert("There was an error. : " + err)
 })
 
