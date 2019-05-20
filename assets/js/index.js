@@ -60,7 +60,8 @@ send_btn.addEventListener("click", () => {
   if (msg.value.trim() != "") {
     the_msg.msg = msg.value.trim()
     p.send(JSON.stringify(the_msg))
-    messages.innerHTML += `<div class="msg m">${the_msg.username}: ${the_msg.msg}</div>`
+    messages.innerHTML += `<div class="msg m"><span class="username">${the_msg.username}:</span> ${the_msg.msg}</div>`
+    document.querySelector(".second .messages").scroll(0, 10000000000)
   }
 
 })
@@ -68,6 +69,7 @@ send_btn.addEventListener("click", () => {
 p.on('data', (data) => {
   message = JSON.parse(data)
   messages.innerHTML += `<div class="msg o">${message.username}: ${message.msg}</div>`
+  document.querySelector(".second .messages").scroll(0, 10000000000)
 })
 
 // When the connectio is closed
