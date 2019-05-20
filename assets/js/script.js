@@ -52,7 +52,6 @@
     })
 
     p.on('connect', () => {
-      console.log("connected")
       document.querySelector(".wrapper").classList.add("move_left")
     })
 
@@ -89,14 +88,16 @@
       if (msg.value.trim() != "") {
         the_msg.msg = msg.value.trim()
         p.send(JSON.stringify(the_msg))
-        messages.innerHTML += `<div class="msg m">${the_msg.username}: ${the_msg.msg}</div>`
+        messages.innerHTML += `<div class="msg m"><span class="username">${the_msg.username}:</span> ${the_msg.msg}</div>`
+        document.querySelector(".second .messages").scroll(0, 10000000000)
       }
 
     })
 
     p.on('data', (data) => {
       message = JSON.parse(data)
-      messages.innerHTML += `<div class="msg o">${message.username}: ${message.msg}</div>`
+      messages.innerHTML += `<div class="msg o"><span class="username">${message.username}:</span> ${message.msg}</div>`
+      document.querySelector(".second .messages").scroll(0, 10000000000)
     })
 
     // When the connectio is closed
