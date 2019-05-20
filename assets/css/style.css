@@ -50,6 +50,16 @@ body{
     border-radius: 3px;
 }
 
+.first .usertype{
+    display: block;
+    text-align: center;
+    font-family: dosis;
+    font-size: 24px;
+    font-weight: 700;
+    color: #991155;
+    margin-bottom: 15px;
+}
+
 .first .id{
     display: block; 
     width: 100%;
@@ -117,6 +127,116 @@ body{
 .first button.connect{
     display: block;
     padding: 6px 35px;
+    cursor: inherit;
+    font-family: "Source sans pro", serif;
+    font-size: 15px;
+    border: none;
+    background: #333;
+    border-radius: 3px;
+    color: #f7f7f7;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.second{
+    position: relative;
+    height: 100vh;
+}
+
+.second .container{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    height: 100vh;
+}
+
+.second .container button.close{
+    position: absolute;
+    left: -12%;
+    display: block;
+    padding: 5px 10px;
+    cursor: inherit;
+    font-family: "Source sans pro", serif;
+    font-size: 15px;
+    border: none;
+    background: #333;
+    border-radius: 3px;
+    color: #f7f7f7;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.second .messages{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    max-height: 85vh;
+    overflow-y: scroll;
+}
+
+.second .messages .msg{
+    display: block;
+    background: #e9e9e9;
+    margin: 10px 0px;
+    border-radius: 3px;
+    padding: 10px;
+    font-family: "Source sans pro";
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.second .messages .msg.o{
+    background: #acacac;
+    width: calc(100% - 100px);
+    margin-left: 100px
+}
+
+.second .messages .msg.m .username{
+    color: #119955;
+    font-family: dosis;
+    font-weight: 700
+}
+
+.second .messages .msg.o .username{
+    color: #991155;
+    font-family: dosis;
+    font-weight: 700
+}
+
+.second .sending{
+    display: block;
+    width: 100%;
+    max-height: 10vh;
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    margin-bottom: 10px;
+}
+
+.second .sending textarea{
+    display: block;
+    position: relative;
+    float: left;
+    max-width: calc(100% - 70px);
+    min-width: calc(100% - 70px);
+    max-height: 50px;
+    min-height: 50px;
+    cursor: inherit;
+    font-family: "Source sans pro", serif;
+    font-size: 14px;
+    text-indent: 15px;
+    padding-top: 5px;
+    border: none;
+    background: #333;
+    border-radius: 3px;
+    color: #f7f7f7;
+}
+
+.second .sending button.send{
+    display: block;
+    padding: 15px 0;
+    width: 60px;
     cursor: inherit;
     font-family: "Source sans pro", serif;
     font-size: 15px;
