@@ -28,6 +28,12 @@ p.on('connect', () => {
 })
 
 
+if(location.hash === '#1'){
+  document.querySelector(".usertype").innerHTML= "The Starter"
+}else{
+  document.querySelector(".usertype").innerHTML= "The Follower"
+}
+
 // The clipboard functionality.
 let clipboard = new Clipboard('.copy');
 
@@ -62,6 +68,7 @@ send_btn.addEventListener("click", () => {
     p.send(JSON.stringify(the_msg))
     messages.innerHTML += `<div class="msg m"><span class="username">${the_msg.username}:</span> ${the_msg.msg}</div>`
     document.querySelector(".second .messages").scroll(0, 10000000000)
+    msg.value = ""
   }
 
 })
@@ -88,12 +95,3 @@ p.on('error', (err) => {
 document.querySelector("button.close").addEventListener("click", () => {
   p.destroy("Bye!")
 })
-
-// get chat type
-function get_type() {
-  radios = document.querySelectorAll("input.type")
-  radios.forEach(r => {
-    if (r.checked)
-      return r.nextElementSibling.getAttribute("value")
-  })
-}

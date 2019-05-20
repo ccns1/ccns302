@@ -55,6 +55,11 @@
       document.querySelector(".wrapper").classList.add("move_left")
     })
 
+    if(location.hash === '#1'){
+      document.querySelector(".usertype").innerHTML= "The Starter"
+    }else{
+      document.querySelector(".usertype").innerHTML= "The Follower"
+    }
 
     // The clipboard functionality.
     let clipboard = new Clipboard('.copy');
@@ -90,6 +95,7 @@
         p.send(JSON.stringify(the_msg))
         messages.innerHTML += `<div class="msg m"><span class="username">${the_msg.username}:</span> ${the_msg.msg}</div>`
         document.querySelector(".second .messages").scroll(0, 10000000000)
+        msg.value = ""
       }
 
     })
