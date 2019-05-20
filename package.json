@@ -7,10 +7,12 @@
     "clipboard": "^2.0.4",
     "simple-peer": "^9.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browserify": "^16.2.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watching": "browserify index.js -o script.js",
+    "watching": "browserify assets/js/index.js -o assets/js/script.js",
     "watch": "npm-watch"
   },
   "repository": {
@@ -29,6 +31,6 @@
   },
   "homepage": "https://github.com/AM-77/webrtc-video-chat#readme",
   "watch": {
-    "watching": "index.js"
+    "watching": "assets/js/index.js"
   }
 }
