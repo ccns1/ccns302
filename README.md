@@ -1,4 +1,4 @@
-# webrtc-video-chat
+# webrtc-chat
   A peer 2 peer webrtc chat texting, audio and video calls app.
 
 ## How to use
