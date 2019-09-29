@@ -8,7 +8,3 @@
   * The Follower past The Starter ID, click connect and waits until its ID is generated, then send it to The Starter.
   * The Starter past The Starter ID, click connect and start chating.
   * To close the chat properly click the close button.
-## TODO
-
-  - add audio calls.
-  - add video calls.
